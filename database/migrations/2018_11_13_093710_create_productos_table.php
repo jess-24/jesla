@@ -22,10 +22,11 @@ class CreateProductosTable extends Migration
             $table->decimal("tamano",2,2);
             $table->string("color",100);
             $table->integer("cantidad");
+            $table->string("imagen",100);
             $table->integer("id_categoria");
-
-
+            $table->integer("id_proveedor");
             $table->foreign("id_categoria")->references("id")->on("categoria");
+            $table->foreign("id_proveedor")->references("id")->on("proveedores");
         });
     }
 
