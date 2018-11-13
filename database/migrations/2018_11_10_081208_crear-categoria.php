@@ -16,9 +16,7 @@ class CrearCategoria extends Migration
         Schema::create('categoria', function (Blueprint $table) {
             $table->increments('id');
             $table->string('categoria',50);
-            $table->integer("id_subcategoria");
             //Llaves foranesas
-            $table->foreign("id_subcategoria")->references("id")->on("sub_categoria");
         });
     }
 
