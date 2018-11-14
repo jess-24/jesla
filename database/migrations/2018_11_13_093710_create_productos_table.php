@@ -21,6 +21,7 @@ class CreateProductosTable extends Migration
             $table->text("descripcion");
             $table->decimal("tamano",2,2);
             $table->string("color",100);
+
             $table->integer("cantidad");
             $table->integer("id_categoria");
 
