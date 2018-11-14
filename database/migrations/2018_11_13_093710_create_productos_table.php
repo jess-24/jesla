@@ -16,17 +16,18 @@ class CreateProductosTable extends Migration
         Schema::create('productos', function (Blueprint $table) {
             $table->increments('id');
             $table->string("nombre",100);
-            $table->decimal("precio_compra",8,2);
-            $table->decimal("precio_venta",8,2);
+            $table->decimal("precio_compra",10,2);
+            $table->decimal("precio_venta",10,2);
             $table->text("descripcion");
-            $table->decimal("tamano",2,2);
+            $table->decimal("tamano",6,2);
             $table->string("color",100);
 
             $table->integer("cantidad");
+            $table->string("imagen",100);
             $table->integer("id_categoria");
-
-
+            $table->integer("id_proveedor");
             $table->foreign("id_categoria")->references("id")->on("categoria");
+            $table->foreign("id_proveedor")->references("id")->on("proveedores");
         });
     }
 
