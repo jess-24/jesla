@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('home')
 
-@section('content')
+@section('sec')
     <div class="container">
         <div class="col-md-5 wthree_banner_bottom_left">
             <div class="video-img">
@@ -9,7 +9,7 @@
                 </a>
             </div>
             <!-- pop-up-box -->
-            <script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
+            <script src="{{asset('js/jquery.magnific-popup.js')}}" type="text/javascript"></script>
             <!--//pop-up-box -->
             <div id="small-dialog" class="mfp-hide">
                 <iframe src="https://www.youtube.com/embed/ZQa6GUVnbNM"></iframe>
@@ -962,14 +962,13 @@
                 <div class="timer_wrap">
                     <div id="counter"> </div>
                 </div>
-                <script src="js/jquery.countdown.js"></script>
-                <script src="js/script.js"></script>
+                <script src="{{asset('js/jquery.countdown.js')}}"></script>
+                <script src="{{asset('js/script.js')}}"></script>
             </div>
             <div class="clearfix"> </div>
         </div>
     </div>
-    <!-- //banner-bottom1 -->
-    <!-- special-deals -->
+
     <div class="special-deals">
         <div class="container">
             <h2>Special Deals</h2>
@@ -1162,4 +1161,5 @@
                 <div class="clearfix"> </div>
             </div>
         </div>
+    </div>
 @endsection
