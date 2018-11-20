@@ -64,7 +64,9 @@
                     @endif
 
             @else
-                <li class="nav-item dropdown">
+
+                <li class="nav-item dropdown" style="list-style: none">
+
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="{{route('login')}}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         {{ Auth::user()->name }} <span class="caret"></span>
                     </a>
