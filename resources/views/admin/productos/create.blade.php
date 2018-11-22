@@ -6,7 +6,7 @@
                 <div class="title m-b-md">
                     Nuevo producto
                 </div>
-                <form method="post" >
+                <form method="post" action="">
                     @csrf
                     <div class="col-sm-4">
                         <div class="form-group label-floating" >
