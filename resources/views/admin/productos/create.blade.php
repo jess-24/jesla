@@ -6,7 +6,7 @@
                 <div class="title m-b-md">
                     Nuevo producto
                 </div>
-                <form method="post" >
+                <form method="post" action="{{ route('producto.store')}}">
                     @csrf
                     <div class="col-sm-4">
                         <div class="form-group label-floating" >
@@ -28,7 +28,7 @@
                     </div>
                     <textarea class="form-control" placeholder="Descripción" rows="5" name="descripcion"></textarea>
                     <div >
-                        <div class="form-group label-floating" >
+                        <div class="col-sm-2" >
                             <label class="control-label">Tamaño (in)</label>
                             <input type="number" class="form-control" name="tamano">
                         </div>
@@ -45,7 +45,25 @@
                             <input type="number" class="form-control" name="cantidad">
                         </div>
                     </div>
-                    <button class="" >Registrar</button>
+                    <div class="col-sm-2">
+                        <div class="form-group label-floating" >
+                            <label class="control-label">Imagen</label>
+                            <input type="text" class="form-control" name="imagen">
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group label-floating" >
+                            <label class="control-label">id_categoria</label>
+                            <input type="number" class="form-control" name="id_categoria">
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group label-floating" >
+                            <label class="control-label">id_proveedor</label>
+                            <input type="number" class="form-control" name="id_proveedor">
+                        </div>
+                    </div>
+                    <button class="col-sm-2"  type="submit">Registrar</button>
                     <!--$table->string("imagen",100);
                     $table->integer("id_categoria");
                     $table->integer("id_proveedor");

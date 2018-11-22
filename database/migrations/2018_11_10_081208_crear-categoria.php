@@ -16,6 +16,7 @@ class CrearCategoria extends Migration
         Schema::create('categoria', function (Blueprint $table) {
             $table->increments('id');
             $table->string('categoria',50);
+            $table->timestamps();
             //Llaves foranesas
         });
     }

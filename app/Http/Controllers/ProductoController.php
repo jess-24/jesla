@@ -18,7 +18,21 @@ class ProductoController extends Controller
         return view('admin.productos.create');
     }
     //metodo que registra el nuevo producto en la BD
-    public function store(){
-
+    public function store(Request $request){
+        //dd($request->all());  //devuelve todos los campos
+        $producto=new producto();
+        $producto -> nombre= $request->input('nombre');
+        $producto -> precio_compra= $request -> input('precio_compra');
+        $producto -> precio_venta= $request -> input('precio_venta');
+        $producto -> descripcion= $request -> input('descripcion');
+        $producto -> tamano= $request -> input('tamano');
+        $producto -> color= $request -> input('color');
+        $producto -> cantidad= $request -> input('cantidad');
+        $producto -> imagen= $request -> input('imagen');
+        $producto -> id_categoria= $request -> input('id_categoria');
+        $producto -> id_proveedor= $request -> input('id_proveedor');
+        $producto -> save();//insert
+        //redireccionar a listado de productos
+        return redirect() -> route( 'producto.index');
     }
 }
