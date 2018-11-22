@@ -9,7 +9,8 @@ class ProductoController extends Controller
 {
     //metodo de leer productos
     public function index(){
-        $productos= producto::all();
+        //::all();  -> traerá todos los productos
+        $productos= producto::paginate(10);//mostrar productos de 10 en 10
         return view('admin.productos.index')-> with(compact('productos'));
     }
     //metodo que permite ver el formulario de prorudcots

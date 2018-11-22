@@ -4,6 +4,7 @@
                 <div class="title m-b-md">
                     Laravel
                 </div>
+                <a href="{{ route('producto.create') }}" ><button>Nuevo Producto</button></a>
                 <div>
                     <table>
                         <thead>
@@ -25,31 +26,23 @@
                             <tr>
                                 <td class="text-center">{{ $p -> id}}</td>
                                 <td>{{ $p-> nombre }}</td>
-                                <td class="text-right">&mnx ;{{ $p-> precio_venta }}</td>
+                                <td class="text-right">{{ $p-> precio_venta }}</td>
                                 <td>{{ $p-> descripcion }}</td>
                                 <td>{{ $p-> tamano }}</td>
                                 <td>{{ $p-> color }}</td>
                                 <td>{{ $p-> cantidad }}</td>
-                                <td><img src="{{asset('$p->imagen')}}" /></td>
+                                <td><img src='{{asset("img/".$p-> imagen)}}' style="width: 100px; height: 100px" /></td>
                                 <td>{{ $p-> id_proveedor}}</td>
                                 <td>
                                     <button type="button" rel="tooltip" title="Ver producto" class="btn btn-info" > Ver<i class=""></i></button>
-                                    <button type="button" rel="tooltip" title="Editar producto" class="btn btn-info" >Editar<i class=""></i></button>
+                                    <button type="button" rel="tooltip" title="Editar producto" class="btn btn-info" > <a ref="" >Editar</a> </button>
                                     <button type="button" rel="tooltip" title="ELiminar producto" class="btn btn-info" >Eliminar<i class=""></i></button>
                                 </td>
                             </tr>
                         @endforeach
                     </tbody>
                     </table>
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    {{$productos ->links()}}
                 </div>
             </div>
 @endsection

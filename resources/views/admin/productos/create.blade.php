@@ -1,101 +1,57 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
+@extends('admin.layout')
+@section('content')
+        <title>REGISTRAR NUEVO PRODUCTO</title>
 
             <div class="content">
                 <div class="title m-b-md">
                     Nuevo producto
                 </div>
-                <form method="post" action="{{url('/admin/productos')}}">
-                    {{crsf_field()}}
-                    <input type="text">increments('id');
-                    $table->string("nombre",100);
-                    $table->decimal("precio_compra",10,2);
-                    $table->decimal("precio_venta",10,2);
-                    $table->text("descripcion");
-                    $table->decimal("tamano",6,2);
-                    $table->string("color",100);
-                    $table->integer("cantidad");
-                    $table->string("imagen",100);
+                <form method="post" >
+                    @csrf
+                    <div class="col-sm-4">
+                        <div class="form-group label-floating" >
+                            <label class="control-label">Nombre producto</label>
+                            <input type="text" class="form-control" name="nombre">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group label-floating" >
+                            <label class="control-label">Precio compra</label>
+                            <input type="number" class="form-control" name="precio_compra">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="form-group label-floating" >
+                            <label class="control-label">Precio venta</label>
+                            <input type="numbre" class="form-control" name="precio_venta">
+                        </div>
+                    </div>
+                    <textarea class="form-control" placeholder="Descripción" rows="5" name="descripcion"></textarea>
+                    <div >
+                        <div class="form-group label-floating" >
+                            <label class="control-label">Tamaño (in)</label>
+                            <input type="number" class="form-control" name="tamano">
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group label-floating" >
+                            <label class="control-label">Color</label>
+                            <input type="text" class="form-control" name="color">
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="form-group label-floating" >
+                            <label class="control-label">Cantidad disponibles</label>
+                            <input type="number" class="form-control" name="cantidad">
+                        </div>
+                    </div>
+                    <button class="" >Registrar</button>
+                    <!--$table->string("imagen",100);
                     $table->integer("id_categoria");
                     $table->integer("id_proveedor");
                     $table->foreign("id_categoria")->references("id")->on("categoria");
-                    $table->foreign("id_proveedor")->references("id")->on("proveedores");
-                    }
-                </form>
+                    $table->foreign("id_proveedor")->references("id")->on("proveedores");-->
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
+                </form>
         </div>
-    </body>
-</html>
+@stop
