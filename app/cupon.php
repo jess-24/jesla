@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class cupon extends Model
 {
-    //
+    protected $cupon="cupon";
 }
