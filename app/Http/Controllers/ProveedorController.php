@@ -7,77 +7,39 @@ use Illuminate\Http\Request;
 
 class ProveedorController extends Controller
 {
-    //metodo de leer proveedores
     public function index(){
-        $proveedor= proveedor::all();
-        return view('admin.proveedor.index')-> with(compact('proveedor'));
+        //::all();  -> traerá todos los productos
+        $proveedores= proveedor::paginate(10);//mostrar productos de 10 en 10
+        return view('admin.proveedores.index')-> with(compact('proveedores'));
     }
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-        return view('admin.proveedor.create');
+    public function create(){
+        return view('admin.proveedores.create');
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-        $this->validate($request,['nombre'=>'required', 'direccion'=>'required']);
-        proveedor::create($request->all());
-        return redirect()->route('proveedor.index')->with('success','Registro creado satisfactoriamente');
-
+    public function store(Request $request){
+        //dd($request->all());  //devuelve todos los campos
+        $proveedor=new proveedor();
+        $proveedor -> nombre= $request->input('nombre');
+        $proveedor -> domicilio= $request -> input('domicilio');
+        $proveedor -> save();//insert
+        //redireccionar a listado de productos
+        return redirect() -> route( 'proveedor.index');
     }
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-        $artista = Artista::find($id);
-        return view('admin.Artista.edit',compact('artista'));
+    public function edit($id){
+        $proveedor=proveedor::find($id);
+        return view('admin.proveedores.edit')-> with(compact('proveedor') );//pasa la var
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-        $this->validate($request,['nombre'=>'required', 'origen'=>'required', 'inicio'=>'required']);
-
-        Artista::find($id)->update($request->all());
-        return redirect()->route('artista.index')->with('success','Registro actualizado satisfactoriamente');
-
+    public function update(Request $request,$id){
+        $proveedor=proveedor::find($id);
+        $proveedor -> nombre= $request->input('nombre');
+        $proveedor -> domicilio= $request -> input('domicilio');
+        $proveedor -> save();//update
+        return redirect() -> route( 'proveedor.index');
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-        Artista::find($id)->delete();
-        return redirect()->route('artista.index')->with('success','Registro eliminado satisfactoriamente');
+    public function destroy($id){
+        $proveedor=proveedor::find($id);
+        $proveedor -> delete();//elimina
+        return redirect() -> route( 'proveedor.index');
+        //return back();
     }
 
 }

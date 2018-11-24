@@ -24,3 +24,11 @@ Route::get('/admin/categorias/{id}/edit','CategoriaController@edit');//Formulari
 Route::post('/admin/categorias/{id}/update','CategoriaController@update');//actualizar
 Route::get('/admin/categorias/{id}/delete','CategoriaController@destroy');//eliminar
 
+//CRUD provedores
+Route::get('/admin/proveedores','ProveedorController@index');
+Route::resource('proveedor','ProveedorController');
+Route::get('/admin/proveedores/create','ProveedorController@create');//devuelve el formulario
+Route::post('/admin/proveedores','ProveedorController@store');//guarda los datos de usuario del formulario
+Route::get('/admin/proveedores/{id}/edit','ProveedorController@edit');//Formulario de edicion
+Route::post('/admin/proveedores/{id}/update','ProveedorController@update');//actualizar
+Route::get('/admin/proveedores/{id}/delete','ProveedorController@destroy');//eliminar
