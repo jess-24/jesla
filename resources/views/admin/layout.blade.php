@@ -7,7 +7,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Wordl Of Music</title>
+    <title>Electronic Store JESLA</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link rel="stylesheet" href="{{asset('bower_components/bootstrap/dist/css/bootstrap.min.css')}}">
@@ -242,7 +242,7 @@ desired effect
                 <li class="header">HEADER</li>
                 <!-- Optionally, you can add icons to the links -->
                 <li><a href="{{route('producto.index')}}"><i class="fa fa-link"></i> <span>Productos</span></a></li>
-
+                <li><a href="{{route('proveedor.index')}}"><i class="fa fa-link"></i> <span>Proveedores</span></a></li>
             </ul>
             <!-- /.sidebar-menu -->
         </section>

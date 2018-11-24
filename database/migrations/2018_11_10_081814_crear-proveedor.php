@@ -17,7 +17,7 @@ class CrearProveedor extends Migration
             $table->increments('id');
             $table->string('nombre',100);
             $table->string("domicilio",100);
-            $table -> timestamps();
+            $table->timestamps();
         });
     }
 
