@@ -12,10 +12,15 @@ Route::resource('proveedor','ProveedorController');
 Route::get('/admin/productos/create','ProductoController@create');//devuelve el formulario
 Route::post('/admin/productos','ProductoController@store');//guarda los datos de usuario del formulario
 Route::get('/admin/productos/{id}/edit','ProductoController@edit');//Formulario de edicion
-Route::post('/admin/productos/{id}/edit','ProductoController@update');//actualizar
+Route::post('/admin/productos/{id}/update','ProductoController@update');//actualizar
+Route::get('/admin/productos/{id}/delete','ProductoController@destroy');//eliminar
 
-//CRUD categorias
+//CRUD categoria
 Route::get('/admin/categorias','CategoriaController@index');
 Route::resource('categoria','CategoriaController');
 Route::get('/admin/categorias/create','CategoriaController@create');//devuelve el formulario
-Route::post('/admin/categorias','Categoriaontroller@store');//guarda los datos de usuario del formulario
+Route::post('/admin/categorias','CategoriaController@store');//guarda los datos de usuario del formulario
+Route::get('/admin/categorias/{id}/edit','CategoriaController@edit');//Formulario de edicion
+Route::post('/admin/categorias/{id}/update','CategoriaController@update');//actualizar
+Route::get('/admin/categorias/{id}/delete','CategoriaController@destroy');//eliminar
+

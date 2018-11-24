@@ -56,4 +56,10 @@ class ProductoController extends Controller
         //redireccionar a listado de productos
         return redirect() -> route( 'producto.index');
     }
+    public function destroy($id){
+        $producto=producto::find($id);
+        $producto -> delete();//elimina
+        return redirect() -> route( 'producto.index');
+        //return back();
+    }
 }

@@ -6,7 +6,7 @@
                 <div class="title m-b-md">
                     Editar producto
                 </div>
-                <form method="post" action="{{ route('producto.edit',['id'=>$producto]) }}">
+                <form method="post" action="{{ action('ProductoController@update',['id'=>$producto])}}">
                     @csrf
                     <div class="col-sm-4">
                         <div class="form-group label-floating" >
@@ -48,19 +48,19 @@
                     <div class="col-sm-2">
                         <div class="form-group label-floating" >
                             <label class="control-label">Cantidad disponibles</label>
-                            <input type="number" step="0.01" class="form-control" name="cantidad" value="{{$producto->cantidad}}">
+                            <input type="number" step="1" class="form-control" name="cantidad" value="{{$producto->cantidad}}">
                         </div>
                     </div>
                     <div class="col-sm-2">
                         <div class="form-group label-floating" >
                             <label class="control-label">Categoria</label>
-                            <input type="number" step="0.01" class="form-control" name="id_categoria" value="{{$producto->id_categoria}}">
+                            <input type="number" step="1" class="form-control" name="id_categoria" value="{{$producto->id_categoria}}">
                         </div>
                     </div>
                     <div class="col-sm-2">
                         <div class="form-group label-floating" >
                             <label class="control-label">Proveedor</label>
-                            <input type="number" step="0.01" class="form-control" name="id_proveedor" value="{{$producto->id_proveedor}}">
+                            <input type="number" step="1" class="form-control" name="id_proveedor" value="{{$producto->id_proveedor}}">
                         </div>
                     </div>
                     <button class="col-sm-2" type="submit" >Guardar</button>
