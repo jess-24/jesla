@@ -26,8 +26,8 @@ class CreateProductosTable extends Migration
             $table->string("imagen",100);
             $table->integer("id_categoria");
             $table->integer("id_proveedor");
-            $table->foreign("id_categoria")->references("id")->on("categoria");
-            $table->foreign("id_proveedor")->references("id")->on("proveedores");
+            $table->foreign("id_categoria")->references("id")->on("categorias");
+            $table->foreign("id_proveedor")->references("id")->on("proveedors");
             $table->timestamps();
         });
     }

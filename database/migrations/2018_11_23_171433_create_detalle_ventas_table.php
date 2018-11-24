@@ -16,7 +16,7 @@ class CreateDetalleVentasTable extends Migration
         Schema::create('detalle_ventas', function (Blueprint $table) {
             $table->increments('id');
             $table->integer("cantidad");
-            $table->integer("id_album")->unsigned();
+            $table->integer("id_producto")->unsigned();
             $table->foreign('id_producto')->references('id')->on('productos');
             $table->integer("id_venta")->unsigned();
             $table->foreign('id_venta')->references('id')->on('ventas');

@@ -13,7 +13,7 @@ class CrearProveedor extends Migration
      */
     public function up()
     {
-        Schema::create('proveedores', function (Blueprint $table) {
+        Schema::create('proveedors', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre',100);
             $table->string("domicilio",100);
@@ -28,6 +28,6 @@ class CrearProveedor extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('proveedores');
+        Schema::dropIfExists('proveedors');
     }
 }
