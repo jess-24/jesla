@@ -1,6 +1,6 @@
 @extends('admin.layout')
 @section('content')
-        <title>REGISTRAR NUEVO PRODUCTO</title>
+        <title>EDITAR PRODUCTO</title>
 
             <div class="content">
                 <div class="title m-b-md">
