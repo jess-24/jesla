@@ -41,3 +41,12 @@ Route::post('/admin/pagos','PagoController@store');//guarda los datos de usuario
 Route::get('/admin/pagos/{id}/edit','PagoController@edit');//Formulario de edicion
 Route::post('/admin/pagos/{id}/update','PagoController@update');//actualizar
 Route::get('/admin/pagos/{id}/delete','PagoController@destroy');//eliminar
+
+//CRUD cupons
+Route::get('/admin/cupones','CuponController@index');
+Route::resource('cupon','CuponController');
+Route::get('/admin/cupones/create','CuponController@create');//devuelve el formulario
+Route::post('/admin/cupones','CuponController@store');//guarda los datos de usuario del formulario
+Route::get('/admin/cupones/{id}/edit','CuponController@edit');//Formulario de edicion
+Route::post('/admin/cupones/{id}/update','CuponController@update');//actualizar
+Route::get('/admin/cupones/{id}/delete','CuponController@destroy');//eliminar

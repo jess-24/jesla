@@ -17,7 +17,7 @@ class CreateCuponsTable extends Migration
             $table->increments('id');
             $table->string('codigo');
             $table->integer('porcentaje');
-            $table->integer('vigencia');
+            $table->date('vigencia');
             //$table->integer('id_usuario')->unsigned();
             //$table->foreign('id_usuario')->references('id')->on('users');
             $table->timestamps();
