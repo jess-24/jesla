@@ -32,3 +32,12 @@ Route::post('/admin/proveedores','ProveedorController@store');//guarda los datos
 Route::get('/admin/proveedores/{id}/edit','ProveedorController@edit');//Formulario de edicion
 Route::post('/admin/proveedores/{id}/update','ProveedorController@update');//actualizar
 Route::get('/admin/proveedores/{id}/delete','ProveedorController@destroy');//eliminar
+
+//CRUD pagos
+Route::get('/admin/pagos','PagoController@index');
+Route::resource('pago','PagoController');
+Route::get('/admin/pagos/create','PagoController@create');//devuelve el formulario
+Route::post('/admin/pagos','PagoController@store');//guarda los datos de usuario del formulario
+Route::get('/admin/pagos/{id}/edit','PagoController@edit');//Formulario de edicion
+Route::post('/admin/pagos/{id}/update','PagoController@update');//actualizar
+Route::get('/admin/pagos/{id}/delete','PagoController@destroy');//eliminar

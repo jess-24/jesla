@@ -244,6 +244,7 @@ desired effect
                 <li><a href="{{route('producto.index')}}"><i class="fa fa-link"></i> <span>Productos</span></a></li>
                 <li><a href="{{route('categoria.index')}}"><i class="fa fa-link"></i> <span>Categorias</span></a></li>
                 <li><a href="{{route('proveedor.index')}}"><i class="fa fa-link"></i> <span>Proveedores</span></a></li>
+                <li><a href="{{route('pago.index')}}"><i class="fa fa-link"></i> <span>Pagos</span></a></li>
             </ul>
             <!-- /.sidebar-menu -->
         </section>
