@@ -246,6 +246,7 @@ desired effect
                 <li><a href="{{route('proveedor.index')}}"><i class="fa fa-link"></i> <span>Proveedores</span></a></li>
                 <li><a href="{{route('pago.index')}}"><i class="fa fa-link"></i> <span>Pagos</span></a></li>
                 <li><a href="{{route('cupon.index')}}"><i class="fa fa-link"></i> <span>Cupones</span></a></li>
+                <li><a href="{{route('venta.index')}}"><i class="fa fa-link"></i> <span>Ventas</span></a></li>
             </ul>
             <!-- /.sidebar-menu -->
         </section>

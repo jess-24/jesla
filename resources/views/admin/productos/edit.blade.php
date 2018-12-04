@@ -51,17 +51,19 @@
                             <input type="number" step="1" class="form-control" name="cantidad" value="{{$producto->cantidad}}">
                         </div>
                     </div>
-                    <div class="col-sm-2">
-                        <div class="form-group label-floating" >
-                            <label class="control-label">Categoria</label>
-                            <input type="number" step="1" class="form-control" name="id_categoria" value="{{$producto->id_categoria}}">
-                        </div>
+                    <div class="col-sm-4">
+                        <select class="form-control" name="id_categoria">
+                            @foreach($categorias as $c )
+                                <option value="{{$c->id}}" >{{$c->categorias}}</option>
+                            @endforeach
+                        </select>
                     </div>
-                    <div class="col-sm-2">
-                        <div class="form-group label-floating" >
-                            <label class="control-label">Proveedor</label>
-                            <input type="number" step="1" class="form-control" name="id_proveedor" value="{{$producto->id_proveedor}}">
-                        </div>
+                    <div class="col-sm-4">
+                        <select class="form-control" name="id_proveedor">
+                            @foreach($proveedores as $p)
+                                <option value="{{$p->id}}" >{{$p->nombre}}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <button class="col-sm-2" type="submit" >Guardar</button>
                     <a href="{{ route( 'producto.index') }}" ><button>Cancelar</button></a>

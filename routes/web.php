@@ -50,3 +50,17 @@ Route::post('/admin/cupones','CuponController@store');//guarda los datos de usua
 Route::get('/admin/cupones/{id}/edit','CuponController@edit');//Formulario de edicion
 Route::post('/admin/cupones/{id}/update','CuponController@update');//actualizar
 Route::get('/admin/cupones/{id}/delete','CuponController@destroy');//eliminar
+
+//CRUD ventas
+Route::get('/admin/ventas','VentaController@index');
+Route::resource('venta','VentaController');
+Route::post('/admin/ventas/{id}/create','VentaController@create');
+Route::get('/admin/ventas/{id}/delete','VentaController@destroy');
+
+//Route::get('/admin/ventas/{id}/categorias','CategoriaController@index');//listado de productos segun la categoria
+Route::resource('detalle_venta','Detalle_ventaController');
+Route::post('/admin/detalle_ventas/{id}/create','Detalle_ventaController@create');
+Route::get('/admin/detalle_ventas/{id}/index','Detalle_ventaController@index');
+Route::get('/admin/detalle_ventas/{id}/edit','Detalle_ventaController@edit');
+Route::post('/admin/detalle_ventas/{id}/update','Detalle_ventaController@update');
+Route::get('/admin/detalle_ventas/{id}/delete','Detalle_ventaController@destroy');

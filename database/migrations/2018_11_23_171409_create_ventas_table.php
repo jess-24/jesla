@@ -15,7 +15,7 @@ class CreateVentasTable extends Migration
     {
         Schema::create('ventas', function (Blueprint $table) {
             $table->increments('id');
-            $table->double('total');
+            $table->double('total',10,2);
             $table->date('fecha');
             $table->integer('id_pago')->unsigned();
             $table->foreign('id_pago')->references('id')->on('pagos');

@@ -12,8 +12,10 @@ class producto extends Model
 
     public function categoria(){
         return $this->belongsTo(categoria::class,'id_categoria');
+        //return $this->belongsTo(categoria::class);
     }
     public function proveedor(){
         return $this->belongsTo(proveedor::class,'id_proveedor');
+        //return $this->belongsTo(proveedor::class);
     }
 }

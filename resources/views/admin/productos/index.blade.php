@@ -33,10 +33,9 @@
                                 <td>{{ $p-> color }}</td>
                                 <td>{{ $p-> cantidad }}</td>
                                 <td><img src='{{asset("img/".$p-> imagen)}}' style="width: 100px; height: 100px" /></td>
-                                <td>{{ $p-> id_categoria}}</td>
-                                <td>{{ $p-> id_proveedor}}</td>
+                                <td>{{ $p-> categoria -> categorias}}</td>
+                                <td>{{ $p-> proveedor -> nombre}}</td>
                                 <td>
-                                    <button type="button" rel="tooltip" title="Ver producto" class="btn btn-info" > Ver<i class=""></i></button>
                                     <a href="{{ action('ProductoController@edit',['id'=>$p->id]) }}" ><button type="button" rel="tooltip" title="Editar producto" class="btn btn-info">Editar</button></a>
                                     <a href="{{ action('ProductoController@destroy',['id'=>$p->id]) }}" ><button type="button" rel="tooltip" title="Eliminar producto" class="btn btn-info">Eliminar</button></a>
                                 </td>

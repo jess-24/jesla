@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\categoria;
 use App\producto;
+use App\detalle_venta;
+use App\proveedor;
 use Illuminate\Http\Request;
 
 class ProductoController extends Controller
@@ -13,9 +16,25 @@ class ProductoController extends Controller
         $productos= producto::paginate(10);//mostrar productos de 10 en 10
         return view('admin.productos.index')-> with(compact('productos'));
     }
+    public function listar($id){
+        //::all();  -> traerá todos los productos
+         $categoria= categoria::findOrFail($id);
+         $productos=$categoria -> productos;
+        return view('admin.ventas.index')-> with(compact('productos'));
+    }
+    public function agregar(Request $request,$id_p,$id_v){
+        $detalle_venta=new detalle_venta();
+        $detalle_venta -> cantidad= $request->input('cantidad');
+        $detalle_venta -> id_producto=$id_p;
+        $detalle_venta -> id_venta=$id_v;
+        $detalle_venta -> save();
+        return redirect() -> route( 'ventas.create');
+    }
     //metodo que permite ver el formulario de prorudcots
     public function create(){
-        return view('admin.productos.create');
+        $proveedores=proveedor::all();
+        $categorias=categoria::all();
+        return view('admin.productos.create')-> with(compact('proveedores','categorias'));
     }
     //metodo que registra el nuevo producto en la BD
     public function store(Request $request){
@@ -37,7 +56,9 @@ class ProductoController extends Controller
     }
     public function edit($id){
         $producto=producto::find($id);
-        return view('admin.productos.edit')-> with(compact('producto') );//pasa la var
+        $proveedores=proveedor::all();
+        $categorias=categoria::all();
+        return view('admin.productos.edit')-> with(compact('producto','proveedores','categorias') );//pasa la var
     }                                                                        //producto a la vista
     //metodo que actualiza un producto en la BD
     public function update(Request $request,$id){
